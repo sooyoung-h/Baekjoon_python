@@ -16,7 +16,6 @@ for i in range(n):
             left -= 1
         elif q == '(':
             left += 1
-
     if result[i] != 'NO':
         if left == 0:
             result[i] = 'YES'
