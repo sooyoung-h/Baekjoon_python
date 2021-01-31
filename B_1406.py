@@ -33,7 +33,7 @@ cursor = len(data1)
 for i in range(n):
     command = sys.stdin.readline().strip()
     if command[0] == 'P':
-        data1.append(command[2])
+        data1.append(command[2]) #stdin 입력은 띄어쓰기 포함하니까 
     elif command[0] == 'L' and data1 != []:
         data2.append(data1.pop())
     elif command[0] == 'D' and data2 != []:
