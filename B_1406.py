@@ -21,3 +21,24 @@ for _ in range(n):
             cursor -= 1
     
 print("".join(data))
+
+#(정답)
+# 스택 두개를 만들어서 커서 이동할 때 마다 양쪽 스택에서 이동시킴 -> O(1)
+import sys
+data1 = list(sys.stdin.readline().strip())
+data2 = []
+n = int(input())
+cursor = len(data1)
+
+for i in range(n):
+    command = sys.stdin.readline().strip()
+    if command[0] == 'P':
+        data1.append(command[2])
+    elif command[0] == 'L' and data1 != []:
+        data2.append(data1.pop())
+    elif command[0] == 'D' and data2 != []:
+        data1.append(data2.pop())
+    elif command[0] == 'B' and data1 != []:
+        data1.pop()
+print("".join(data1 + list(reversed(data2))))
+        
